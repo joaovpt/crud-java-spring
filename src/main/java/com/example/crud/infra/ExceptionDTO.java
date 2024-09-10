@@ -1,15 +1,14 @@
 package com.example.crud.infra;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
-@Getter
-@Setter
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class ExceptionDTO {
-
     String message;
+    Integer status;
+    public ExceptionDTO(String message, Integer status){
 
-    public ExceptionDTO(String message){
         this.message = message;
+        this.status = status;
     }
 }
